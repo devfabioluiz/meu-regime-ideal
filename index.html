@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>IRPF Mensal - INSS Informado</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        max-width: 800px;
+        margin: auto;
+      }
+      label,
+      input {
+        display: block;
+        margin: 5px 0;
+      }
+      input {
+        width: 100%;
+        padding: 5px;
+      }
+      .renda-bloco {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 6px;
+        background: #f9f9f9;
+      }
+      button {
+        margin-top: 15px;
+        padding: 10px;
+      }
+      #resultado {
+        margin-top: 20px;
+        background: #f0f0f0;
+        padding: 15px;
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Cálculo IRPF Mensal (com INSS informado manualmente)</h2>
+
+    <div id="rendas-container">
+      <div class="renda-bloco">
+        <label
+          >Rendimento Bruto (R$):
+          <input type="number" step="0.01" class="rendimento"
+        /></label>
+        <label
+          >INSS Contribuído (R$):
+          <input type="number" step="0.01" class="inss" value="0"
+        /></label>
+        <label
+          >IRRF Retido (R$):
+          <input type="number" step="0.01" class="irrf" value="0"
+        /></label>
+      </div>
+    </div>
+
+    <button type="button" onclick="adicionarRenda()">
+      + Adicionar outra renda
+    </button>
+
+    <h3>Deduções</h3>
+    <label
+      >Número de dependentes: <input type="number" id="dependentes" value="0"
+    /></label>
+    <label
+      >Pensão alimentícia (R$):
+      <input type="number" step="0.01" id="pensao" value="0"
+    /></label>
+    <label
+      >Educação (R$): <input type="number" step="0.01" id="educacao" value="0"
+    /></label>
+    <label
+      >Plano de saúde (R$):
+      <input type="number" step="0.01" id="saude" value="0"
+    /></label>
+    <label
+      >Previdência privada (PGBL - R$):
+      <input type="number" step="0.01" id="previdencia" value="0"
+    /></label>
+
+    <button onclick="executarCalculo()">Calcular IRPF</button>
+
+    <div id="resultado"></div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

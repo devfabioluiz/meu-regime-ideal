@@ -1,1 +1,0 @@
-# meu-regime-ideal
